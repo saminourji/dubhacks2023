@@ -16,17 +16,28 @@ const Main = () => {
                     <div className="buttonText">Back</div>
                 </div>
                 <div className="mainTitle">Israel and Palestine Conflict</div>
-                <div className="textNewsContainer">
-                <div className="textNews">The New York Times</div>
-                <img src={nytImage} alt="Description" className="ellipseImage" />
-                <div className="textNews">CNN</div>
-                <img src={cnnImage} alt="Description" className="ellipseImage" />
-                <div className="textNews">NBC</div>
-                <img src={nbcImage} alt="Description" className="ellipseImage" />
-                <div className="textNews">The Washington Times</div>
-                <img src={washingtonImage} alt="Description" className="ellipseImage" />
-                <div className="textNews">Fox News</div>
-                <img src={foxImage} alt="Description" className="ellipseImage" />
+                {/* Washington Times Div */}
+                <div className="newsOutletContainer">
+                    <div className="newsOutletImage">
+                        <img src={washingtonImage} alt="Washington Times" className="image" />
+                    </div>
+                    <div className="newsOutletText">The Washington Times</div>
+                </div>
+
+                {/* Fox News Div */}
+                <div className="newsOutletContainer">
+                    <div className="newsOutletImage">
+                        <img src={foxImage} alt="Fox News" className="image" />
+                    </div>
+                    <div className="newsOutletText">Fox News</div>
+                </div>
+
+                {/* NBC Div */}
+                <div className="newsOutletContainer">
+                    <div className="newsOutletImage">
+                        <img src={nbcImage} alt="NBC" className="image" />
+                    </div>
+                    <div className="newsOutletText">NBC</div>
                 </div>
                 <div className="summaryContainer">
                   <div className = "summaryTitle">Quick Summary</div>
