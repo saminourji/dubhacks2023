@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./main.css";
 import nbcImage from "../../assets/334_nbc.jpg"; // Corrected import path to your local image file
 import nytImage from "../../assets/nyt.png";
@@ -6,7 +6,7 @@ import foxImage from "../../assets/fox.webp";
 import washingtonImage from "../../assets/washington.png";
 import cnnImage from "../../assets/CNN_International_logo.svg.png";
 
-const Main = () => {
+const Main = (props) => {
   return (
     <>
       <div className="main">
@@ -92,14 +92,7 @@ const Main = () => {
         <div className="summaryContainer">
           <div className="summaryTitle">Quick Summary</div>
           <div className="summaryText">
-            Origins: Conflict rooted in 19th-century nationalist movements, with
-            Jews and Arabs both claiming historic ties to Palestine. 1948: UN
-            partition plan led to the establishment of Israel and displacement
-            of hundreds of thousands of Palestinians (Nakba). Key Issues:
-            Borders, status of Jerusalem, security, and right of return for
-            Palestinian refugees are central points of contention. Current
-            Situation: Despite diplomatic efforts, a comprehensive and lasting
-            peace agreement remains elusive.
+            {props.summary}
           </div>
         </div>
       </div>
