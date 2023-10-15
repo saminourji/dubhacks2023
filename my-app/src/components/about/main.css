@@ -1,0 +1,113 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.buttonContainer {
+    position: fixed;
+    top: 10px; /* Adjust the distance from the top edge */
+    left: 10px; /* Adjust the distance from the left edge */
+    z-index: 9999; /* Set z-index to ensure the button appears on top of other elements */
+    width: 91px;
+    height: 48px;
+    padding: 0 24px;
+    background: #5FA9E8;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+
+.buttonText {
+    color: white;
+    font-size: 18px;
+    font-family: 'Inter';
+    font-weight: 600;
+    line-height: 28px;
+    word-wrap: break-word;
+}
+
+.mainTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 674px;
+    height: 130px;
+    text-align: center;
+    color: #062D46;
+    font-size: 40px;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.summaryTitle {
+    width: 674px;
+    height: 50px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Merriweather;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.summaryContainer {
+    width: 800px;
+    height: 400px;
+    flex-shrink: 0; 
+    border-radius: 20px;
+    border: 1px solid #FFF;
+    background: rgba(155, 255, 255, 0.55);
+    position: relative;
+}
+
+.textNews {
+    width: 250px;
+    height: 43px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Merriweather;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.closeButtonContainer {
+    position: absolute;
+    top: 10px; /* Distance from the top edge of the summary container */
+    right: 10px; /* Distance from the right edge of the summary container */
+    z-index: 9999; /* Set z-index to ensure the button appears on top of other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textNewsContainer {
+    display: flex;
+    justify-content: space-around; /* Adjust this property to change the spacing between textNews items */
+    align-items: center; /* Optional: Align items vertically in the middle */
+    margin-bottom: 10px; /* Optional: Add margin-bottom to create space between the textNews items and the summary */
+}
+
+.ellipseImage {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: url(C:\Users\123vl\dubhacks2023\my-app\src\assets\334_nbc.jpg), rgb(211, 211, 211) 50% / cover no-repeat;
+}
+
