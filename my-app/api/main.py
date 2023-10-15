@@ -15,11 +15,8 @@ app = Flask(__name__)
 os.environ["OPENAI_API_KEY"] = OPENAI_APIKEY
 openai.api_key = OPENAI_APIKEY
 
-count = 0
-topic_summary = ""
 @app.route('/get_text')
 def get_text():
-    count +=1
     # Base URL and endpoint
     base_url = "https://api.tavily.com/"
     endpoint = "search"
@@ -49,24 +46,26 @@ def get_text():
     topic_summary = tsummary.json()["answer"].split("\nSource")[0]
     return topic_summary
 
+if (__name__ == '__main__'):
+    app.run(debug=True)
+
 @app.route('/get_articles')
 def get_articles():
-    count +=1
     # Base URL and endpoint
     base_url = "https://api.tavily.com/"
     endpoint = "search"
 
     topic = "Israel Palestine Conflict"
 
-    # tsummary_payload = {
-    #     "query": f"Explain the topic '{topic}' by giving past history, and providing context on recent events.",
-    #     "search_depth": "basic",
-    #     "include_answer": True,
-    #     "include_raw_content": False,
-    #     "exclude_domains": ["wikipedia.com", "apnews.com/hub"],
-    #     "max_results": 10,
-    #     "api_key": TAVILY_APIKEY
-    # }
+    tsummary_payload = {
+        "query": f"Explain the topic '{topic}' by giving past history, and providing context on recent events.",
+        "search_depth": "basic",
+        "include_answer": True,
+        "include_raw_content": False,
+        "exclude_domains": ["wikipedia.com", "apnews.com/hub"],
+        "max_results": 10,
+        "api_key": TAVILY_APIKEY
+    }
 
     article_payload = {
         "query": f"Give news articles discussing the topic '{topic}' with a wide range of perspectives. No government websites. Do not include a media outlet domain as a source more than once",
@@ -82,23 +81,23 @@ def get_articles():
     
 
     article_payload_json = json.dumps(article_payload)
-    # tsummary_payload_json = json.dumps(tsummary_payload)
+    tsummary_payload_json = json.dumps(tsummary_payload)
 
     headers = {
         "Content-Type": "application/json"
     }
 
     print("Getting topic summary")
-    # tsummary = requests.post(f"{base_url}{endpoint}",
-    #                         data=tsummary_payload_json, headers=headers)
+    tsummary = requests.post(f"{base_url}{endpoint}",
+                            data=tsummary_payload_json, headers=headers)
 
     print("Getting articles on topic")
     articles = requests.post(f"{base_url}{endpoint}",
                             data=article_payload_json, headers=headers)
 
     result_list = []
-    # links = []
-    # topic_summary = tsummary.json()["answer"].split("\nSource")[0]
+    links = []
+    topic_summary = tsummary.json()["answer"].split("\nSource")[0]
     
 
     messages = [{
@@ -148,6 +147,5 @@ def get_articles():
     json_data = json.loads(data)
     return get_five_articles(json_data)
 
-if (__name__ == '__main__' and count <= 2):
-    print(count)
+if (__name__ == '__main__'):
     app.run(debug=True)
