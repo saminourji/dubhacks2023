@@ -5,13 +5,23 @@ import nytImage from "../../assets/nyt.png";
 import foxImage from "../../assets/fox.webp";
 import washingtonImage from "../../assets/washington.png";
 import cnnImage from "../../assets/CNN_International_logo.svg.png";
+import { inputValue } from "../home/home";
+import { Routes, Route, useNavigate, BrowserRouter } from "react-router-dom";
 
 const Main = () => {
+  const navigate = useNavigate();
+
+  const goHome = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="main">
         <div className="buttonContainer">
-          <div className="buttonText">Back</div>
+          <button className="buttonText" onClick={goHome}>
+            Back
+          </button>
         </div>
         <div className="mainTitle">Israel and Palestine Conflict</div>
         <div className="timelineContainer">

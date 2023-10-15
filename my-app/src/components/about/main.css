@@ -77,11 +77,13 @@
 
 .buttonText {
   color: white;
+  background-color: rgba(255, 255, 255, 0);
   font-size: 18px;
   font-family: "Inter";
   font-weight: 600;
   line-height: 28px;
   word-wrap: break-word;
+  border: none;
 }
 
 .mainTitle {
