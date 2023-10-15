@@ -11,9 +11,9 @@ const Home = () => {
   };
 
   return (
-    <section>
+    <section> 
       <div className="title">SpectrumAI</div>
-      <div className="subtitle"> Experience multiple perspectives </div>
+      <div className="subtitle"> The biases in your news sources, ranked and summarized. </div>
       <div className="input">
         <div className="inputBoxContainer">
           <input
