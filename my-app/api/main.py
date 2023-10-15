@@ -16,7 +16,7 @@ os.environ["OPENAI_API_KEY"] = OPENAI_APIKEY
 openai.api_key = OPENAI_APIKEY
 
 count = 0
-
+topic_summary = ""
 @app.route('/get_text')
 def get_text():
     count +=1
@@ -46,8 +46,8 @@ def get_text():
     tsummary = requests.post(f"{base_url}{endpoint}",
                             data=tsummary_payload_json, headers=headers)
 
-
-    return tsummary.json()["answer"].split("\nSource")[0]
+    topic_summary = tsummary.json()["answer"].split("\nSource")[0]
+    return topic_summary
 
 @app.route('/get_articles')
 def get_articles():
@@ -97,7 +97,7 @@ def get_articles():
                             data=article_payload_json, headers=headers)
 
     result_list = []
-    links = []
+    # links = []
     # topic_summary = tsummary.json()["answer"].split("\nSource")[0]
     
 

@@ -1,3 +1,4 @@
+import json
 data = {
   "povs": [
     {
@@ -80,7 +81,7 @@ data = {
       "media": "The Wall Street Journal",
       "summary": "The Biden administration proposes a new rule that prohibits total bans on transgender athletes in K-12 and college education, but allows for exclusions if necessary to maintain a level playing field.",
       "level": "3"
-    }
+    },
     {"title": "", 
       "url": "", 
       "media": "", 
@@ -167,4 +168,4 @@ def get_five_articles(data):
     # else:
     #     return five_selections2
 
-# print(get_five_articles(data))
+# print(type(get_five_articles(data)))

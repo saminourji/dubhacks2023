@@ -8,26 +8,33 @@ import cnnImage from "../../assets/CNN_International_logo.svg.png";
 // import TextDisplay from './TextDisplay';
 
 const Main = (props) => {
-  
   const [text, setText] = useState('');
   const [articles, setArticles] = useState([]);
   const [title, setTitle] = useState("Quick Summary");
+  const [title1, setTitle1] = useState("Loading...");
+  const [title2, setTitle2] = useState("Loading...");
+  const [title3, setTitle3] = useState("Loading...");
+  const [title4, setTitle4] = useState("Loading...");
+  const [title5, setTitle5] = useState("Loading...");
 
   useEffect(() => {
     // Make an API request to the backend
     fetch('/get_text') // Update with the actual backend URL
-      .then((response) => (response[0].text(), response[1]))
+      .then((response) => (response.text()))
       .then((data) => setText(data))
       .catch((error) => console.error('Error:', error));
-  }, []);
-
-  useEffect(() => {
-    // Make an API request to the backend
+  
     fetch('/get_articles') // Update with the actual backend URL
-      // .then((response) => json.loads(response))
-      .then((data) => setArticles(data))
+      // .then((response) => (response))
+      .then((data) => { setArticles(data)
+      setTitle1(articles[0]["media"])
+      setTitle2(articles[1]["media"])
+      setTitle3(articles[2]["media"])
+      setTitle4(articles[3]["media"])
+      setTitle5(articles[4]["media"])
+    })
       .catch((error) => console.error('Error:', error));
-  }, []);
+    }, []);
 
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -38,7 +45,6 @@ const Main = (props) => {
   };
 
   return (
-    <>
       <div className="main">
         <div className="buttonContainer">
           <div className="buttonText">Back</div>
@@ -50,13 +56,14 @@ const Main = (props) => {
               <div className="tooltip">
                 <div className="newsOutletContainer">
                   <div className="newsOutletImage">
-                    <img onClick={() => handleImageClick('1')} 
+                    <img 
+                      onClick={() => handleImageClick('1')} 
                       src={washingtonImage}
                       alt="Washington Times"
                       className="image"
                     />
                   </div>
-                  <div className="newsOutletText">articles[0]["media"]</div>
+                  <div className="newsOutletText">{title1}</div>
                 </div>
               </div>
             </li>
@@ -64,13 +71,14 @@ const Main = (props) => {
               <div className="tooltip">
                 <div className="newsOutletContainer">
                   <div className="newsOutletImage">
-                    <img onClick={() => handleImageClick('2')} 
+                    <img 
+                      onClick={() => handleImageClick('2')} 
                       src={nytImage}
                       alt="New York Times"
                       className="image"
                     />
                   </div>
-                  <div className="newsOutletText">articles[1]["media"]</div>
+                  <div className="newsOutletText">{title2}</div>
                 </div>
               </div>
             </li>
@@ -84,7 +92,7 @@ const Main = (props) => {
                       className="image"
                     />
                   </div>
-                  <div className="newsOutletText">articles[2]["media"]</div>
+                  <div className="newsOutletText">{title3}</div>
                 </div>
               </div>
             </li>
@@ -92,13 +100,14 @@ const Main = (props) => {
               <div className="tooltip">
                 <div className="newsOutletContainer">
                   <div className="newsOutletImage">
-                    <img onClick={() => handleImageClick('4')} 
+                    <img 
+                      onClick={() => handleImageClick('4')} 
                       src={foxImage}
                       alt="Washington Times"
                       className="image"
                     />
                   </div>
-                  <div className="newsOutletText">articles[3]["media"]</div>
+                  <div className="newsOutletText">{title4}</div>
                 </div>
               </div>
             </li>
@@ -106,13 +115,14 @@ const Main = (props) => {
               <div className="tooltip">
                 <div className="newsOutletContainer">
                   <div className="newsOutletImage">
-                    <img onClick={() => handleImageClick('5')} 
+                    <img 
+                      onClick={() => handleImageClick('5')} 
                       src={cnnImage}
                       alt="Washington Times"
                       className="image"
                     />
                   </div>
-                  <div className="newsOutletText">{articles[4]["media"]}</div>
+                  <div className="newsOutletText">{title5}</div>
                 </div>
               </div>
             </li>
@@ -126,7 +136,6 @@ const Main = (props) => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 
