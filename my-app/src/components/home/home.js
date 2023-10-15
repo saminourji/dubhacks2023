@@ -2,7 +2,6 @@ import React from "react";
 import "./home.css";
 import { useState } from "react";
 import btn from "../../assets/Vectorinputicon.png";
-import bg from "../../assets/bg.svg";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");

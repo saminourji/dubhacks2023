@@ -83,11 +83,6 @@
   transform: translate(10%);
 }
 
-section  {
-  background-image: url( "../../assets/bg.png");
-  height: 100vh;
-  background-size: cover;
-}
 
 element.style {
   top: 0;
