@@ -1,0 +1,63 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  margin-top: 30vh;
+  font-family: Merriweather Sans;
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-family: Merriweather Sans;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.input {
+  justify-content: center;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.inputBox {
+  text-align: left;
+  padding-left: 10px;
+  width: 325px;
+  height: 35px;
+  border: none;
+  background: none;
+}
+
+.inputBox:focus {
+  outline: none;
+}
+
+.inputBtn {
+  border: none;
+  background: none;
+  position: absolute;
+  margin-top: 3px;
+}
+
+.inputBoxContainer {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 30px;
+  border: 1px white solid;
+  width: 400px;
+  height: 35px;
+  margin: auto;
+}
+
+.inputImg {
+  size: 10%;
+}
