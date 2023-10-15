@@ -1,0 +1,35 @@
+.newsOutletContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px; /* Adjust the spacing between news outlets */
+}
+.newsOutletImage {
+max-width: 120px; /* Set the width of the image container */
+height: 120px; /*Set the height of the image container */
+overflow: hidden; /* Ensure the image is clipped within the container */
+border-radius: 50%; /* Make the image container circular */
+margin-bottom: 0; /* Adjust the spacing between the image and text */
+margin-left: -100%;
+}
+.newsOutletText {
+width: 110px;
+height: 43px;
+flex-shrink: 0;
+color: #000;
+text-align: center;
+font-family: Merriweather;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 0px;
+margin-left: -100%;
+margin-top: 25%;
+}
+.newsOutletImage img {
+    width: 120px;
+}

@@ -6,14 +6,16 @@ import React, {useState, useEffect} from "react";
 
 function App() {
 
-  const [accuracy, setAccuracy] = useState("Jerusalem Iraael Conflict")
+  
+  // const [accuracy, setAccuracy] = useState(0)
 
-  useEffect(() => {
-    fetch("/api/route").then((res) => res.json()).then((data) => {setAccuracy(data)});
-  }, [])
+  // useEffect(() => {
+  //   setAccuracy(accuracy+1)
+  //   // fetch("/api/route").then((res) => res.json()).then((data) => {setAccuracy(data)});
+  // }, [])
   return (
     <div className="App">
-      <Main summary = {accuracy}/>
+      <Main />
     </div>
   );
 }

@@ -81,6 +81,11 @@ data = {
       "summary": "The Biden administration proposes a new rule that prohibits total bans on transgender athletes in K-12 and college education, but allows for exclusions if necessary to maintain a level playing field.",
       "level": "3"
     }
+    {"title": "", 
+      "url": "", 
+      "media": "", 
+      "summary": "", 
+      "level": "3"}
   ]
 }
 import re
@@ -88,7 +93,9 @@ import re
 # Sample string
 text = "There are 123 apples and 456 oranges in the basket."
 
-
+replacement = {"title": "None", "url": "", "media": "None", 
+      "summary": "", 
+      "level": "3"}
 
 def get_five_articles(data):
     i = 0
@@ -132,7 +139,7 @@ def get_five_articles(data):
             print(f"Included media {selected[position]['media']} for level {selected[position]['level']}")
 
         else:
-            five_selections1.append(None)
+            five_selections1.append(replacement)
             print(f"{i} not levels")
 
     # for i in range(5, 0, -1):

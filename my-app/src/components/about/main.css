@@ -117,8 +117,9 @@
 }
 
 .summaryContainer {
-  width: 800px;
-  height: 200px;
+  width: 800px; /* Fixed width */
+  max-height: 800px; /* Set a maximum height to trigger overflow */
+  overflow: auto; /* Add scrollbars when content overflows */
   border-radius: 20px;
   border: 1px solid #fff;
   background: rgba(255, 255, 255, 0.451);
@@ -144,6 +145,7 @@
   margin-left: -100%;
   margin-top: 25%;
 }
+
 
 .closeButtonContainer {
   position: absolute;
@@ -187,4 +189,5 @@
 .summaryText {
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 20px;
 }
