@@ -37,14 +37,14 @@ data = {
       "url": "https://www.nytimes.com/article/title-ix-transgender-athletes-school-sports.html", 
       "media": "The New York Times", 
       "summary": "The Biden administration proposes a new rule allowing schools to reject transgender athletes from competing on sports teams that align with their gender identity when questions of physicality and fairness arise. The rule would also prevent schools from introducing blanket bans on transgender athletes.", 
-      "level": "3"
+      "level": "wpoe3oiwbfoibwef"
     },
     {
       "title": "Biden Plan Sets New Rules for Transgender Athletes and School Sports ...", 
       "url": "https://www.nytimes.com/2023/04/06/us/transgender-athletes-title-ix-biden-adminstration.html", 
       "media": "The New York Times", 
       "summary": "The Biden administration's proposed rule would permit schools to limit the participation of transgender students if including them could compromise competitive fairness or lead to sports-related injuries. However, schools would be prohibited from implementing across-the-board bans. The proposed rule requires a period of public comment before implementation.", 
-      "level": "3"
+      "level": "wpeonfwpeonf 3"
     },
     {
       "title": "For Transgender Athletes, an Ongoing Search for Inclusion and Fairness ...", 
@@ -83,6 +83,10 @@ data = {
     }
   ]
 }
+import re
+
+# Sample string
+text = "There are 123 apples and 456 oranges in the basket."
 
 
 
@@ -94,7 +98,11 @@ def get_five_articles(data):
     #preliminary selection of unique (media, level) pairs
     for article in data["articles"]:
         media = article["media"]
+        match = re.search(r'\d+', article["level"])
+        if match:
+          article["level"] = match.group()
         level = int(article["level"])
+        # level = int(article["level"])
         if media not in medias or level not in levels:
             print(f"Just included: {media}: {media in medias}, {level}: {level in levels}")
             selected.append(article)
@@ -105,8 +113,8 @@ def get_five_articles(data):
 
     five_selections1 = []
     selected_medias1 = []
-    five_selections2 = []
-    selected_medias2 = []
+    # five_selections2 = []
+    # selected_medias2 = []
     #for each level, include first article pair, none if nothing; no duplicate medias
     for i in range(1,6):
         # print(levels)
@@ -127,28 +135,29 @@ def get_five_articles(data):
             five_selections1.append(None)
             print(f"{i} not levels")
 
-    for i in range(5, 0, -1):
-        if i in levels:
-            position = levels.index(i)
-            while (
-                selected[position]["media"] in selected_medias2
-                and (position != len(levels) - 1 and i in levels[position + 1 :])
-            ):
-                position = levels[position + 1 :].index(i) + position + 1
+    # for i in range(5, 0, -1):
+    #     if i in levels:
+    #         position = levels.index(i)
+    #         while (
+    #             selected[position]["media"] in selected_medias2
+    #             and (position != len(levels) - 1 and i in levels[position + 1 :])
+    #         ):
+    #             position = levels[position + 1 :].index(i)
 
-            five_selections2.append(selected[position])
-            selected_medias2.append(selected[position]["media"])
-            print(f"Included media {selected[position]['media']} for level {selected[position]['level']}")
-        else:
-            five_selections2.append(None)
-            print(f"{i} not in levels")
+    #         five_selections2.append(selected[position])
+    #         selected_medias2.append(selected[position]["media"])
+    #         print(f"Included media {selected[position]['media']} for level {selected[position]['level']}")
+    #     else:
+    #         five_selections2.append(None)
+    #         print(f"{i} not in levels")
 
-    print(selected_medias1)
-    print(selected_medias2)
+    # print(selected_medias1)
+    # print(selected_medias2)
 
-    if (len(list(set(selected_medias1))) >= len(list(set(selected_medias2)))):
-        return five_selections1
-    else:
-        return five_selections2
+    # if (len(list(set(selected_medias1))) >= len(list(set(selected_medias2)))):
+        
+    return five_selections1
+    # else:
+    #     return five_selections2
 
 # print(get_five_articles(data))

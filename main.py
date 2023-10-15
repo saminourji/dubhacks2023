@@ -5,6 +5,7 @@ from article_selection import get_five_articles
 import requests
 import os
 import openai
+import re
 os.environ["OPENAI_API_KEY"] = OPENAI_APIKEY
 openai.api_key = OPENAI_APIKEY
 
