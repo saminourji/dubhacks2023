@@ -27,11 +27,11 @@ const Main = (props) => {
     fetch('/get_articles') // Update with the actual backend URL
       // .then((response) => (response))
       .then((data) => { setArticles(data)
-      setTitle1(articles[0]["media"])
-      setTitle2(articles[1]["media"])
-      setTitle3(articles[2]["media"])
-      setTitle4(articles[3]["media"])
-      setTitle5(articles[4]["media"])
+      setTitle1(data[0]["media"])
+      setTitle2(data[1]["media"])
+      setTitle3(data[2]["media"])
+      setTitle4(data[3]["media"])
+      setTitle5(data[4]["media"])
     })
       .catch((error) => console.error('Error:', error));
     }, []);

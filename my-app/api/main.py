@@ -46,9 +46,6 @@ def get_text():
     topic_summary = tsummary.json()["answer"].split("\nSource")[0]
     return topic_summary
 
-if (__name__ == '__main__'):
-    app.run(debug=True)
-
 @app.route('/get_articles')
 def get_articles():
     # Base URL and endpoint
@@ -145,7 +142,9 @@ def get_articles():
     )
     data = response['choices'][0]['message']['content']
     json_data = json.loads(data)
-    return get_five_articles(json_data)
+    five_articles = get_five_articles(json_data)
+    print("DONE")
+    return five_articles
 
 if (__name__ == '__main__'):
     app.run(debug=True)
