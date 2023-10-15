@@ -2,8 +2,6 @@ import React from "react";
 import "./home.css";
 import { useState } from "react";
 import btn from "../../assets/Vectorinputicon.png";
-import right from "../../assets/right.svg";
-import left from "../../assets/left.png";
 import bg from "../../assets/bg.svg";
 
 const Home = () => {
