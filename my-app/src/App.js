@@ -6,7 +6,7 @@ import Main from "./components/about/main";
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Home />
     </div>
   );
 }

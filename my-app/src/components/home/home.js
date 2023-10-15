@@ -2,6 +2,9 @@ import React from "react";
 import "./home.css";
 import { useState } from "react";
 import btn from "../../assets/Vectorinputicon.png";
+import right from "../../assets/right.svg";
+import left from "../../assets/left.png";
+import bg from "../../assets/bg.svg";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
@@ -11,9 +14,10 @@ const Home = () => {
   };
 
   return (
-    <section>
+    <section> 
+      <img className="bg" alt="bg" src={bg} />
       <div className="title">SpectrumAI</div>
-      <div className="subtitle"> Experience multiple perspectives </div>
+      <div className="subtitle"> The biases in your news sources, ranked and summarized. </div>
       <div className="input">
         <div className="inputBoxContainer">
           <input

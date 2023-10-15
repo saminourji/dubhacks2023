@@ -4,39 +4,51 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  height: 100vh; /* Set the section height to fill the viewport height */
 }
 
 .title {
   text-align: center;
-  margin-top: 30vh;
-  font-family: Merriweather Sans;
+  font-family: "Merriweather Sans";
   font-size: 70px;
   font-weight: 700;
-  margin: 0 auto;
+  position: fixed;
+  top: 30%; /* Adjust the percentage value to your preference */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
 .subtitle {
-  text-align: center;
-  color: black;
+  color: #000000;
+  font-family: "Lato";
   font-size: 30px;
-  font-family: Merriweather Sans;
   font-weight: 400;
-  word-wrap: break-word;
+  letter-spacing: 0;
+  line-height: normal;
+  position: fixed;
+  text-align: center;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 825px;
 }
 
 .input {
   justify-content: center;
-  text-align: left;
-  margin-top: 50px;
+  text-align: center;
+  margin-top: 375px;
+  left: 50%;
 }
 
 .inputBox {
-  text-align: left;
+  text-align: center;
   padding-left: 10px;
   width: 340px;
   height: 35px;
   border: none;
   background: none;
+  top: 40%
 }
 
 .inputBox:focus {
@@ -62,4 +74,11 @@
 .inputImg {
   height: 20px;
   width: 20px;
+}
+
+.bg {
+  height: 706px;
+  left: 0;
+  top: 0;
+  width: 1197px;
 }
